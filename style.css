@@ -1,0 +1,960 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: rbBold;
+  src: url(RB\ Bold.ttf);
+}
+
+@font-face {
+  font-family: rbRegular;
+  src: url(RB\ Regular.ttf);
+}
+
+::-webkit-scrollbar {
+  width: 0.9vw;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(160, 160, 160, 0.7); 
+  border-radius: 0.5vw;
+  background: hsla(207, 65%, 56%, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4897D8; 
+  border-radius: 0.5vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1566B7; 
+}
+
+/************************************** header **************************************/
+
+.header {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  background-color: hsl(0, 0%, 97%);
+  padding: 2.2vw 0px;
+  grid-template-areas:
+    "backgroundText logo";
+}
+
+.logo { grid-area: logo; }
+.varText { grid-area: varText; }
+
+.logo {
+  background-image: url(./header/circle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#logoHeader {
+  width: 20vw;
+}
+
+.varText h1 {
+  color: #4897D8;
+  font-family: rbRegular;
+  font-size: 4vw;
+}
+
+.varText span {
+  color: #1566B7;
+  font-family: rbBold;
+}
+
+.varTextBg {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.element1 {
+  width: 10vw;
+  position: absolute;
+  bottom: 13vw;
+  left: 10vw;
+  opacity: 0.7;
+  animation-name: element1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes element1 {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translateY(0.7vw); }
+  50%  { transform: translateX(0.7vw); }
+  100%   { transform: translate(0, -0px); }   
+}
+
+.element2 {
+  width: 10vw;
+  position: absolute;
+  bottom: 15vw;
+  right: 8vw;
+  opacity: 0.7;
+  animation-name: element2;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes element2 {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translateY(0.7vw); }
+  100%   { transform: translate(0, -0px); }   
+}
+
+.element3 {
+  width: 5.8vw;
+  position: absolute;
+  bottom: 0vw;
+  left: 16vw;
+  opacity: 0.7;
+  animation-name: element3;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes element3 {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0.7vw, 0.7vw);}
+  100%   { transform: translate(0, -0px); }   
+}
+
+.element4 {
+  width: 9.7vw;
+  position: absolute;
+  bottom: 0vw;
+  right: 12vw;
+  opacity: 0.7;
+  animation-name: element4;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes element4 {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0.7vw, 0.7vw);}
+  100%   { transform: translate(0, -0px); }   
+}
+
+/************************************** vidoe **************************************/
+
+.our {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 100px;
+  grid-auto-flow: row;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  padding: 5vw 0vw 12vw;
+  background-color: #fff;
+  grid-template-areas:
+    "video video video";
+}
+
+.video { grid-area: video; }
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66vw;
+  height: 39vw;
+  background-image: url(./video/bgVideo.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 2vw;
+}
+
+.playBtn {
+  height: 6.5vw;
+  width: 6.5vw;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.playBtn span {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+/* زر التشغيل الأبيض */
+.playBtn span:nth-child(4) {
+  margin: 2.4vw 2.9vw;
+  border-top: 1vw solid transparent;
+  border-bottom: 1vw solid transparent;
+  border-left: 1.4vw solid #fff;
+}
+
+/* خلفية الزر الأبيض */
+.playBtn span:nth-child(3) { 
+  margin: 0.9vw;
+  width: 5vw;
+  height: 5vw;
+  background: #1566B7;
+  border-radius: 50vw;
+}
+
+.playBtn span:nth-child(2) {
+  width: 4.2vw;
+  height: 4.2vw;
+  margin: 1.2vw;
+  border: solid 1px #1566B7;
+  -webkit-animation-name: playButtonRingAnim;
+  animation-name: playButtonRingAnim;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #4897D8;
+  border-radius: 50vw;
+}
+
+.playBtn span:nth-child(1) {
+  width: 4.2vw;
+  height: 4.2vw;
+  margin: 1.2vw;
+  border: solid 1px #1566B7;
+  -webkit-animation-name: playButtonRingAnim;
+  animation-name: playButtonRingAnim;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #4897D8;
+  border-radius: 50vw;
+  opacity: 0.36;
+}
+
+.lity-wrap {
+  background-color: hsla(207, 65%, 56%, 0.45);
+}
+
+.lity-close {
+  color: #ffffff;
+  font-size: 2.5vw;
+  width: 4vw;
+  height: 4vw;
+}
+
+.lity-close:hover {
+  color: #e71b1b;
+  font-size: 2.5vw;
+  width: 4vw;
+  height: 4vw;
+}
+
+
+
+@-webkit-keyframes playButtonRingAnim {
+  from {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+  to {
+      -webkit-transform: scale(1.7);
+      transform: scale(1.7);
+      opacity: 0;
+  }
+}
+
+@keyframes playButtonRingAnim {
+  from {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+  to {
+      -webkit-transform: scale(1.7);
+      transform: scale(1.7);
+      opacity: 0;
+  }
+}
+
+/************************************** مبادئنا **************************************/
+.principles {
+  display: flex;
+  position: relative;
+  flex-direction: row-reverse;
+  justify-content: center;
+  bottom: 9vw;
+  height: 0px;
+}
+
+.card {
+  position: relative;
+  width: 22.7vw;
+  height: 18vw;
+}
+
+.box {
+  background: linear-gradient(45deg, #1566B7, #4897D8);
+  box-shadow: 0 0.5vw 1vw hsla(0, 0%, 100%, 0.2);
+  border-radius: 1.5vw;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.card:hover .box {
+  transform: translateY(-1vw);
+  box-shadow: 0 0.8vw 3vw hsla(0, 0%, 100%, 0.6);
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.content h1 {
+  position: absolute;
+  top: 0.2vw;
+  right: 1vw;
+  font-size: 5.4vw;
+  color: hsla(0, 0%, 100%, 0.15);
+  transition: 0.5s;
+}
+.card:hover .content h1 {
+  font-size: 5.8vw;
+}
+
+.content h3 {
+  font-size: 2.5vw;
+  font-family: rbRegular;
+  color: rgb(230, 230, 230);
+}
+.card:hover .content h3 {
+  color: rgb(230, 230, 230);
+}
+
+.content p {
+  font-size: 0.8vw;
+  font-family: rbBold;
+  color: rgb(230, 230, 230);
+}
+
+
+/************************************** خدماتنا **************************************/
+.services {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0vw 0px;
+  background-color: #4897D8;
+  width: 80vw;
+  margin: 0vw auto;
+  border-radius: 3vw;
+  padding-top: 12vw;
+  padding-bottom: 7vw;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-template-areas:
+    "servicesText servicesText"
+    "videoEdting design"
+    "media motion";
+}
+
+.servicesText { grid-area: servicesText; }
+.design { grid-area: design; }
+.videoEdting { grid-area: videoEdting; }
+.motion { grid-area: motion; }
+.media { grid-area: media; }
+
+.servicesText h1 {
+  font-size: 5vw;
+  font-family: rbBold;
+  color: #fff;
+  text-shadow: 0.2vw 0.2vw 0vw #4897D8,
+  0.4vw 0.4vw 0vw #1566B7;
+}
+
+.servicesLine {
+  background-color: #fff;
+  border: none;
+  height: 0.2vw;
+  width: 12vw;
+  margin: auto;
+}
+
+.design img {
+  width: 21vw;
+  box-shadow: 0 0.5vw 1vw hsla(0, 0%, 100%, 0.2);
+  border-radius: 2.7vw;
+  transition: 0.5s;
+}
+
+.videoEdting img {
+  width: 21vw;
+  box-shadow: 0 0.5vw 1vw hsla(0, 0%, 100%, 0.2);
+  border-radius: 2.7vw;
+  transition: 0.5s;
+}
+
+.motion img {
+  width: 21vw;
+  box-shadow: 0 0.5vw 1vw hsla(0, 0%, 100%, 0.2);
+  border-radius: 2.7vw;
+  transition: 0.5s;
+  margin-top: 4vw;
+}
+
+.media img {
+  width: 21vw;
+  box-shadow: 0 0.5vw 1vw hsla(0, 0%, 100%, 0.2);
+  border-radius: 2.7vw;
+  transition: 0.5s;
+  margin-top: 4vw;
+}
+
+.design img:hover {
+  box-shadow: 0 0.7vw 2vw hsla(0, 0%, 100%, 0.6);
+  transform: translateY(-0.7vw);
+}
+
+.videoEdting img:hover {
+  box-shadow: 0 0.7vw 2vw hsla(0, 0%, 100%, 0.6);
+  transform: translateY(-0.7vw);
+}
+
+.motion img:hover {
+  box-shadow: 0 0.7vw 2vw hsla(0, 0%, 100%, 0.6);
+  transform: translateY(-0.7vw);
+
+}
+
+.media img:hover {
+  box-shadow: 0 0.7vw 2vw hsla(0, 0%, 100%, 0.6);
+  transform: translateY(-0.7vw);
+}
+
+/************************************** شرؤكنا **************************************/
+.OurPartner {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  background-image: url(./header/circle.png);
+  background-size: calc(48vw);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10vw;
+  grid-template-areas:
+    "logo1 logo2 logo3"
+    "logo10 partnerText logo4"
+    "logo9 partnerText logo5"
+    "logo8 logo7 logo6";
+}
+
+.logo1 { grid-area: logo1; }
+.logo2 { grid-area: logo2; }
+.logo3 { grid-area: logo3; }
+.logo4 { grid-area: logo4; }
+.logo5 { grid-area: logo5; }
+.logo6 { grid-area: logo6; }
+.logo7 { grid-area: logo7; }
+.logo8 { grid-area: logo8; }
+.logo9 { grid-area: logo9; }
+.logo10 { grid-area: logo10; }
+.partnerText { grid-area: partnerText; }
+
+.partnerText h1 {
+  font-size: 6vw;
+  font-family: rbBold;
+  color: #fff;
+  text-shadow: 0.2vw 0.2vw 0vw #b8d5ef,
+  0.4vw 0.4vw 0vw #1566B7;
+}
+
+.OurPartner img {
+  width: 10vw;
+}
+
+/************************************** انجازاتنا **************************************/
+.OurAchievements {
+  text-align: center;
+  background-color: hsl(0, 0%, 97%);
+  padding: 0vw 0vw 4vw;
+}
+
+.Achievements {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  align-items: center;
+  justify-items: center;
+  width: 80vw;
+  border-radius: 2vw;
+  margin: 0vw auto;
+  background-color: #4897D8;
+  padding: 1vw 0vw;
+  grid-template-areas:
+    "Experience Projects Clients";
+}
+
+.Experience { grid-area: Experience; }
+.Projects { grid-area: Projects; }
+.Clients { grid-area: Clients; }
+
+.textAchievement {
+  font-size: 4vw;
+  font-family: rbBold;
+  color: #1566B7;
+  text-shadow: 0.2vw 0.2vw 0vw #fff,
+  0.4vw 0.4vw 0vw #4897D8;
+}
+
+.AchievementLine {
+  background-color: #1566B7;
+  border: none;
+  height: 0.2vw;
+  width: 12vw;
+  margin: 0vw auto 2vw;
+}
+
+.textCount {
+  position: relative;
+  bottom: 2.5vw;
+  color: #fff;
+  font-family: rbRegular;
+  font-size: 2.6vw;
+}
+
+.Achievements span {
+  color: #1566B7;
+  font-family: rbBold;
+  font-size: 4vw;
+  opacity: 0.8;
+  position: relative;
+  top: 1.5vw;
+  right: 5vw;
+}
+
+/************************************** اراء عملائنا **************************************/
+
+.OurClients {
+  text-align: center;
+  padding: 8vw 0vw;
+}
+
+.clientsText {
+  font-size: 3.6vw;
+  font-family: rbBold;
+  color: #4897D8;
+  text-shadow: 0.2vw 0.2vw 0vw #fff,
+  0.4vw 0.4vw 0vw #1566B7;
+}
+
+.clientsLine {
+  background-color: #4897D8;
+  border: none;
+  height: 0.2vw;
+  width: 14vw;
+  margin: auto;
+}
+
+.swiper {
+  width: 50vw;
+  height: 20vw;
+  margin-top: 0vw;
+  padding: 3vw 2vw 3vw;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #1566B7;
+  font-size: 18px;
+  border-radius: 1vw;
+}
+
+.client {
+  position: relative;
+  bottom: 2.6vw;
+}
+
+.client h1 {
+  color: #fff;
+  font-family: rbRegular;
+  font-size: 1.3vw;
+}
+
+.client h6 {
+  color: #fff;
+  font-family: rbBold;
+  font-size: 0.9vw;
+}
+
+.client hr {
+  position: relative;
+  background-color: #fff;
+  border: none;
+  height: 0.1vw;
+  width: 4.4vw;
+  margin: auto;
+  top: 0.5vw;
+}
+
+.swiper-slide p {
+  color: #fff;
+  padding: 0vw 4vw;
+  font-family: rbBold;
+  font-size: 0.9vw;
+}
+
+.quote-right {
+  position: absolute;
+  top: 15vw;
+  left: 45vw;
+  color: #4897D8;
+  font-size: 8vw;
+}
+
+.quote-left {
+  position: absolute;
+  bottom: 15vw;
+  right: 45vw;
+  color: #4897D8;
+  font-size: 8vw;
+}
+
+/************************************** اطلب خدماتنا **************************************/
+
+.Ask-our {
+  background-image: url(./Untitled-1.jpg);
+  background-position: center;
+  text-align: center;
+  margin-bottom: 10vw;
+}
+
+.Ask-our-div {
+  padding: 6vw 0vw;
+}
+
+.Ask-our-h1 {
+ font-family: rbRegular;
+ font-size: 4vw;
+ color: #fff;
+}
+
+.Ask-our-p {
+  font-family: rbBold;
+  font-size: 2vw;
+  color: #fff;
+ }
+
+.Btn-div {
+  margin-top: 1vw;
+  display: flex;
+  justify-content: center;
+}
+
+.Btn {
+  width: 13vw;
+  height: 3vw;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.342);
+  border-radius: 5vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .5s;
+}
+
+.text {
+  font-size: 1vw;
+  font-family: rbBold;
+  color: #1566B7;
+  z-index: 2;
+}
+
+.effect {
+  position: absolute;
+  width: 0.9vw;
+  height: 0.9vw;
+  background-color: #1566B7;
+  border-radius: 50vw;
+  z-index: 1;
+  opacity: 0;
+  transition-duration: .5s;
+}
+
+.Btn:hover .effect {
+  transform: scale(15);
+  transform-origin: center;
+  opacity: 1;
+  transition-duration: .5s;
+}
+
+.Btn:hover {
+  box-shadow: 0px 0px 5px #1566B7,
+  0px 0px 10px #1566B7,
+  0px 0px 30px #1566B7;
+  transition-duration: .7s;
+}
+
+.Btn:hover .text {
+  color: white;
+}
+
+/************************************** footer **************************************/
+footer {
+  text-align: center;
+}
+
+.footer {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  background-color: #1566B7;
+  border-radius: 2vw;
+  width: 80vw;
+  margin: 0vw auto;
+  padding: 2vw;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "map communication"
+    "accounts accounts";
+}
+
+.map { grid-area: map; }
+.communication { grid-area: communication; }
+.accounts { grid-area: accounts; }
+
+iframe {
+  width: 32vw;
+  height: 22vw;
+  border-radius: 1vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 24vw;
+  height: 2vw;
+  border-radius: 0.5vw;
+  text-align: right;
+  border-top: 0.2vw solid #cccccc;
+  border-right: 0.2vw solid #cccccc;
+  border-left: 0.2vw solid #cccccc;
+  border-bottom: 0.4vw solid #cccccc;
+  margin-bottom: 0.7vw;
+  padding: 0vw 0.5vw;
+  font-family: rbBold;
+  color: #1566B7;
+  transition: 0.7s;
+}
+
+textarea {
+  width: 24vw;
+  height: 7vw;
+  border-radius: 0.5vw;
+  text-align: right;
+  border-top: 0.2vw solid #cccccc;
+  border-right: 0.2vw solid #cccccc;
+  border-left: 0.2vw solid #cccccc;
+  border-bottom: 0.4vw solid #cccccc;
+  padding: 0vw 0.5vw;
+  font-family: rbBold;
+  color: #1566B7;
+  transition: 0.7s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-top: 0.2vw solid #4897D8;
+  border-right: 0.2vw solid #4897D8;
+  border-left: 0.2vw solid #4897D8;
+  border-bottom: 0.4vw solid #4897D8;
+  transition: 0.7s;
+}
+
+form .Btn {
+  width: 8vw;
+  height: 2vw;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.342);
+  border-radius: 5vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .5s;
+  margin: 0vw auto;
+}
+
+form .text {
+  font-size: 0.9vw;
+  font-family: rbBold;
+  color: #1566B7;
+  z-index: 2;
+}
+
+form .effect {
+  position: absolute;
+  width: 0.6vw;
+  height: 0.6vw;
+  background-color: #4897D8;
+  border-radius: 50vw;
+  z-index: 1;
+  opacity: 0;
+  transition-duration: .5s;
+}
+
+.offer {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0.5vw 0.5vw 1vw 0vw;
+}
+
+.offer p {
+  color: white;
+  padding-right: 0.5vw;
+  font-family: rbRegular;
+  font-size: 0.7vw;
+}
+
+.check {
+  cursor: pointer;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+  margin-top: 0.10vw;
+}
+.check:before {
+  content: "";
+  position: absolute;
+  background: rgba(34,50,84,0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+}
+.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+.check:hover:before {
+  opacity: 1;
+}
+.check:hover svg {
+  stroke: #ffffff;
+}
+#cbx:checked + .check svg {
+  stroke: #ffffff;
+}
+#cbx:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+#cbx:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+.accounts h1 {
+  color: #fff;
+  font-family: rbBold;
+  margin-top: 1vw;
+  font-size: 2vw;
+}
+
+.soc-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+
+.soc-media i {
+  color: #4897D8;
+  font-size: 1.6vw;
+  padding-top: 0.7vw;
+  background-color: white;
+  width: 3vw;
+  height: 2.3vw;
+  border-radius: 50vw;
+
+}
+
+.copyright {
+  color: #1566B7;
+  font-family: rbBold;
+  padding: 0.5vw 0vw;
+  font-size: 0.7vw;
+}
